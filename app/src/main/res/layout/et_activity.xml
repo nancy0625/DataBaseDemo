@@ -2,27 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="发表的内容"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:id="@+id/textView4" />
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_shouye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
         <EditText
             android:id="@+id/et_title"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:hint="标题："
-            android:inputType="text"
-            android:focusableInTouchMode="true"
-            android:singleLine="true"
             android:layout_below="@+id/textView4"
             android:layout_centerHorizontal="true"
-            />
+            android:focusableInTouchMode="true"
+            android:hint="标题："
+            android:inputType="text"
+            android:singleLine="true" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -38,7 +52,6 @@
             android:layout_height="200dp"
             android:hint="内容："
             android:inputType="text"
-            android:layout_below="@+id/textView4"
             android:layout_centerHorizontal="true"
             />
         <Button

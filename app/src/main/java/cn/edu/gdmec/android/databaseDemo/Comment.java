@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.wusihan;
+package cn.edu.gdmec.android.databaseDemo;
 
 /**
  * Created by asus on 2018/1/2.

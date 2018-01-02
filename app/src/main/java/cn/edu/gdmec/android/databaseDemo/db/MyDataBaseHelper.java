@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.wusihan.db;
+package cn.edu.gdmec.android.databaseDemo.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import cn.edu.gdmec.android.wusihan.Comment;
+import cn.edu.gdmec.android.databaseDemo.Comment;
 
 /**
  * Created by asus on 2018/1/2.
@@ -46,14 +46,13 @@ public class MyDataBaseHelper extends SQLiteOpenHelper{
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    public List<Comment> select(int num){
+    public List<Comment> select(){
         SQLiteDatabase db = this.getReadableDatabase();
         List<Comment> list = new ArrayList<>();
         Cursor cursor = db.rawQuery(" select title,content,strftime('%Y-%m-%d %H:%M:%S',datetime(round(timer/1000),'unixepoch'))" +
                 " from comment" +
                 " group by strftime('%Y-%m-%d %H:%M:%S',datetime(round(timer/1000),'unixepoch'))" +
-                " order by 1 desc" +
-                " limit "+ num,null);
+                " order by 1 desc",null);
         cursor.moveToFirst();
 
         do {

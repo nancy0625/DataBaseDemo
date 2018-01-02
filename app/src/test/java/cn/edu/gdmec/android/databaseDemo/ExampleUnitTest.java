@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.wusihan;
+package cn.edu.gdmec.android.databaseDemo;
 
 import org.junit.Test;
 

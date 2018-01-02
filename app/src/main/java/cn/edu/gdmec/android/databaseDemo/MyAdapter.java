@@ -1,14 +1,12 @@
-package cn.edu.gdmec.android.wusihan;
+package cn.edu.gdmec.android.databaseDemo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.security.PublicKey;
 import java.util.List;
 
 /**
@@ -56,9 +54,9 @@ public class MyAdapter extends BaseAdapter {
             viewHolder = (ViewHolder)convertView.getTag();
         }
         Comment comment = list.get(position);
-        viewHolder.tv1.setText(comment.getTitle());
-        viewHolder.tv2.setText(comment.getContent());
-        viewHolder.tv3.setText(comment.getTimer());
+        viewHolder.tv1.setText("评论者："+"\n"+"  "+comment.getTitle());
+        viewHolder.tv2.setText("评论内容："+"\n"+"  "+comment.getContent());
+        viewHolder.tv3.setText("评论时间："+"\n"+"  "+comment.getTimer());
         return convertView;
     }
     class ViewHolder{

@@ -1,4 +1,4 @@
-package cn.edu.gdmec.android.wusihan;
+package cn.edu.gdmec.android.databaseDemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.edu.gdmec.android.wusihan.db.MyDataBaseHelper;
+import cn.edu.gdmec.android.databaseDemo.db.MyDataBaseHelper;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MyAdapter adapter;
     private ListView lv;
     private List<Comment> list;
-    private Button search;
+    private Button search,shouye;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lv = (ListView)findViewById(R.id.lv_activity) ;
 
         search = (Button) findViewById(R.id.search);
+
         search.setOnClickListener(this);
     }
 
@@ -42,11 +43,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search:
-                list = dataBaseHelper.select(2);
+                list = dataBaseHelper.select();
                 adapter = new MyAdapter(list,this);
                 lv.setAdapter(adapter);
 
                 break;
+
+
         }
     }
 }
