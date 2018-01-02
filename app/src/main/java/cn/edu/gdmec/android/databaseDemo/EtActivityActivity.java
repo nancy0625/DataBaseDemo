@@ -48,7 +48,7 @@ public class EtActivityActivity extends Activity implements View.OnClickListener
         return false;
 
     }
-        //初始化页面
+        //初始化页面的方法
     private void initView() {
         btn_fabiao = (Button) findViewById(R.id.btn_fabiao);
         shouye = (Button)findViewById(R.id.btn_shouye) ;
